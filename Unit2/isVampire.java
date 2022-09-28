@@ -18,7 +18,7 @@ public class isVampire{
     public static void main(String[] args) {
     testisVampire(4,true,true);
     testisVampire(23,false,false);
-    testisVampire(7.5,true,true);
+    testisVampire(8,true,true);
     testisVampire(18,false,false);
   }
 
