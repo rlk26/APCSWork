@@ -9,7 +9,7 @@ public class isVampire{
     }
   }
     public static boolean isVampire(float hour, boolean awake, boolean expected){
-      if (hour < 6.5 && awake == true || hour > 22 && awake == true){
+      if ((hour < 6.5 && awake == true) || (hour > 22 && awake == true) || (hour > 6.5 && awake == false) || (hour < 22 && awake == false)){
         return true;
       } else {
         return false;
@@ -19,6 +19,6 @@ public class isVampire{
     testisVampire(4,true,true);
     testisVampire(23,false,false);
     testisVampire(8,true,false);
-    testisVampire(18,true,false);
+    testisVampire(18,false,true);
   }
 }
