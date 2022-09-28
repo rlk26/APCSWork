@@ -9,17 +9,16 @@ public class isVampire{
     }
   }
     public static boolean isVampire(float hour, boolean awake, boolean expected){
-      if (hour > 6.5 && hour < 22 && awake == true){
-        return false;
-      } else {
+      if (hour < 6.5 && awake == true || hour > 22 && awake == true){
         return true;
+      } else {
+        return false;
         }
     }
     public static void main(String[] args) {
     testisVampire(4,true,true);
     testisVampire(23,false,false);
-    testisVampire(8,true,true);
-    testisVampire(18,false,false);
+    testisVampire(8,true,false);
+    testisVampire(18,true,false);
   }
-
 }
