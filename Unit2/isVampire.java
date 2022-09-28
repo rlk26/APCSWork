@@ -9,11 +9,13 @@ public class isVampire{
     }
   }
     public static boolean isVampire(float hour, boolean awake, boolean expected){
-      if ((hour < 6.5 && awake == true) || (hour > 22 && awake == true) || (hour > 6.5 && awake == false) || (hour < 22 && awake == false)){
+      if (hour < 6.5 && awake == true || hour > 22 && awake == true){
+        return true;
+      } else if (hour > 6.5 && hour < 22 && awake == false){
         return true;
       } else {
         return false;
-        }
+      }
     }
     public static void main(String[] args) {
     testisVampire(4,true,true);
