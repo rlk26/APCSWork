@@ -1,6 +1,14 @@
-public class IsVampire{
-
-    public static boolean isVampire(float hour, boolean awake){
+public class isVampire{
+  public static void testisVampire(float hour, boolean awake, boolean expected){
+  boolean result = isVampire(hour, awake, expected);
+    System.out.println("Hour : " + hour + ", Awake: " + awake + ", Expected result of 'Is a Vampire?': " + expected + ", Is a vampire?: " + result);
+    if(expected == result){
+      System.out.println("Woohoo!");
+    } else {
+      System.out.println("Boohoo!");
+    }
+  }
+    public static boolean isVampire(float hour, boolean awake, boolean expected){
       if (hour > 6.5 && hour < 22 && awake == true){
         return false;
       } else {
@@ -8,7 +16,10 @@ public class IsVampire{
         }
     }
     public static void main(String[] args) {
-    testisVampire(4,true);
+    testisVampire(4,true,true);
+    testisVampire(23,false,false);
+    testisVampire(7.5,true,true);
+    testisVampire(18,false,false);
   }
 
 }
