@@ -1,6 +1,15 @@
 public class attention{
-  public static void attention(String hey) {
-    String index = hey.substring(0,8);
+  public static void testattention(String hello, boolean expected){
+    boolean correct = attention(hello, expected);
+    System.out.println("Expected" + expected + "Correct" + correct);
+    if(correct == expected){
+      System.out.println("Woohoo!");
+    } else {
+      System.out.println("Boohoo!");
+    }
+  }
+  public static boolean attention(String hey) {
+    String index = hey.substring(0,7);
     Boolean hello;
     if (index.equals("Hey You!")){
       return true;
