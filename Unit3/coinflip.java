@@ -1,5 +1,5 @@
-public class attention{
-  public static void attention() {
+public class coinflip{
+  public static void coinflip() {
 } public static void main(String []){
 }
 }
