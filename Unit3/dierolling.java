@@ -1,9 +1,24 @@
 public class dierolling{
   public static void dierolling() {
-    for(int i = 0; i < 10 i++){
-      System.out.println(Math.random(1,6))
-    }
+      double die = (int)(Math.random() + 6);
+      System.out.println(die);
 }
 public static void main(String [] args){
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
+  dierolling();
 }
 }

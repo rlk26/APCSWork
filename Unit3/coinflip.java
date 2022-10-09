@@ -1,5 +1,31 @@
 public class coinflip{
-  public static void coinflip() {
-} public static void main(String []){
+  public static boolean coinflip() {
+    double coin = (int) (Math.random() * 2 + 2);
+    if (coin == 2){
+      System.out.println("Heads " + coin);
+      return true;
+    } else if (coin  == 3){
+      System.out.println("Tails " + coin);
+      return false;
+    } else {
+      return false;
+    }
+} public static void main(String [] args){
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
+  coinflip();
 }
 }
