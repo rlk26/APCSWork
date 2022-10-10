@@ -1,6 +1,6 @@
 public class coinflip{
   public static boolean coinflip() {
-    double coin = (int) (Math.random() * 2 + 2);
+    int coin = (int) (Math.random() * 2 + 2);
     if (coin == 2){
       System.out.println("Heads " + coin);
       return true;

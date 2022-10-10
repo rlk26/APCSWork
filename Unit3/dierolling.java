@@ -1,8 +1,8 @@
 public class dierolling{
   public static void dierolling() {
-      double die = (int)(Math.random() * 6);
+      int die = (int)(Math.random() * 6);
       if(die == 0.0){
-        System.out.println(6.0);
+        System.out.println(6);
       } else {
       System.out.println(die);
     }
