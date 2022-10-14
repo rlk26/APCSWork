@@ -1,17 +1,23 @@
 public class Functions {
-  public static void sumOfSquares(int sum){
-
-  }
+  /*public static void sumOfSquares(int sum){
+  }*/
   public static void countOccurrences(String hey, String count){
-    int i = hey.indexOf(count);
-    
+    int counting = 0;
+    if(int i = 0; i<hey.length; i++){
+      if(count == ""){
+      counting++;
+    }
   }
-  public static void reverse(){
+    return counting;
+  }
+  /*public static void reverse(){
 
   }
-  public static void factorial(){
+  public static void factorial(int a){
 
-  }
+
+  }*/
   public static void main(String [] args){
+    countOccurrences("Bananananana, na");
   }
 }
