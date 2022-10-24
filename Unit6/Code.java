@@ -2,7 +2,7 @@ import processing.core.*;
 
 public class Code extends PApplet
 {
-  public Code(PApplet pap, int x, int y, int vx, int vy){
+  public Code(PApplet pap, float x, float y, int vx, int vy, int angle){
 
     this.pap = pap;
     this.x = x;
@@ -12,7 +12,8 @@ public class Code extends PApplet
 
   }
   private PApplet pap;
-  private int x,y;
+  private float x,y;
+  private float a;
   private int vx, vy;
 
   public static void main(String[] args)
