@@ -1,4 +1,5 @@
 import processing.core.*;
+import java.util.*;
 
 public class Animate extends PApplet
 {
@@ -9,26 +10,33 @@ public class Animate extends PApplet
 
     public void setup()
     {
-      createStar();
+     stars = new ArrayList <Star>();
+
     }
 
     public void createStar(){
-      float x = 400;
-      float y = 400;
-      int a = 0;
-
-      star = new Star(this,x,y,a);
+    star = new Star(this,random(0,800),random(0,800), 0);
+    stars.add(star);
     }
 
     public void draw()
     {
         background(255);
-        star.update();
+
+        for (Star star : stars){
+          star.update();
+        }
+
+    }
+
+    public void keyPressed(){
+      createStar();
     }
 
     public static void main(String[] args)
     {
         PApplet.main("Animate");
     }
+    private ArrayList < Star > stars;
     private Star star;
 }

@@ -1,5 +1,3 @@
-import processing.core.*;
-
 public class TestProcessing extends PApplet
 {
     public void settings()
