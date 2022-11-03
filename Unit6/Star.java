@@ -13,10 +13,10 @@ public class Star {
   public void update()
   {
     pap.pushMatrix();
+    pap.fill(x,y,x);
     pap.translate(x,y);
     pap.rotate(a);
     pap.rectMode(pap.CENTER);
-    pap.fill(169,250,207);
     pap.rect(0,0,60,20);
     pap.rect(0,0,20,60);
     pap.quad(-15,30,-30,15,15,-30, 30,-15 );
