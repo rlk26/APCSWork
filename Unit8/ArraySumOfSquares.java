@@ -2,6 +2,9 @@ import java.util.*;
 public class ArraySumOfSquares{
   public static void testsumOfSquares(ArrayList<Double>nums, double expected) {
     double correct = sumOfSquares(nums);
+    for(double num : nums){
+      System.out.println(num);
+    }
     System.out.println("Expected: " + expected + " Correct: " + correct);
     if(correct == expected){
       System.out.println("Woohoo!");

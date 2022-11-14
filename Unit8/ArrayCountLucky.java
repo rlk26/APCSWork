@@ -4,6 +4,9 @@ public class ArrayCountLucky {
   public static void testCountLucky(ArrayList<Integer>nums, int expected) {
    int correct = countLucky(nums);
     System.out.println("Expected: " + expected + " Correct: " + correct);
+    for(int num : nums){
+      System.out.println(num);
+    }
     if(correct == expected){
       System.out.println("Woohoo!");
     } else {

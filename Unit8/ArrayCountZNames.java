@@ -6,6 +6,9 @@ public class ArrayCountZNames{
 public static void testcountZNames(ArrayList<String>nums, int expected) {
  int correct = countZNames(nums);
   System.out.println("Expected: " + expected + " Correct: " + correct);
+  for(String num : nums){
+    System.out.println(num);
+  }
   if(correct == expected){
     System.out.println("Woohoo!");
   } else {
