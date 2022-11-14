@@ -1,22 +1,21 @@
 public class CountZNames{
-  public static void testcountZNames(String [] nums,String expected) {
-   String correct = countZNames(nums);
+  public static void testcountZNames(String [] nums, int expected) {
+   int correct = countZNames(nums);
     System.out.println("Expected: " + expected + " Correct: " + correct);
-    if(correct.equals(expected)){
+    if(correct == expected){
       System.out.println("Woohoo!");
     } else {
       System.out.println("Boohoo!");
     }
   }
-  public static String countZNames(String [] nums){
-   String hey = nums.substring();
+  public static int countZNames(String [] nums){
    int count = 0;
     for (String num : nums)
-    if(){
-      count++;
-    }
+        if(num.substring(0,1).equals("Z" || "z")){
+      count += 1;
+  }
 
-    return hey;
+    return count;
 
   }
 
@@ -27,5 +26,17 @@ public class CountZNames{
     values [2] = "Am";
     values [3] = "Ramya";
     testcountZNames(values,0);
+    String [] values2 = new String [4];
+    values2 [0] = "Zambia";
+    values2 [1] = "Zimbabwe";
+    values2 [2] = "Ethiopia";
+    values2 [3] = "Ghana";
+    testcountZNames(values2,2);
+    String [] values3 = new String [4];
+    values3 [0] = "Za";
+    values3 [1] = "Ze";
+    values3 [2] = "Zi";
+    values3 [3] = "Zo";
+    testcountZNames(values3,4);
   }
 }
