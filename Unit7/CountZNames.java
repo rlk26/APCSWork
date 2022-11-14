@@ -14,9 +14,9 @@ public class CountZNames{
         if(num.substring(0,1).equals("Z")){
       count += 1;
   }
-  else if (num.substring(0,1).equals("Z")){
+    else if (num.substring(0,1).equals("z")){
     count += 1;
-}
+  }
 
     return count;
 

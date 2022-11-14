@@ -1,5 +1,5 @@
 public class ArrayCountLucky {
-  public static void testCountLucky(ArrayList<int>nums, int expected) {
+  public static void testCountLucky(ArrayList<Integer>nums, int expected) {
    int correct = countLucky(nums);
     System.out.println("Expected: " + expected + " Correct: " + correct);
     if(correct == expected){
@@ -8,7 +8,7 @@ public class ArrayCountLucky {
       System.out.println("Boohoo!");
     }
   }
-  public static int countLucky(ArrayList<int>nums){
+  public static int countLucky(ArrayList<Integer>nums){
    int count = 0;
     for (int num : nums)
     if (num%7 == 0 || num%10 == 7) {
