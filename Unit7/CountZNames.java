@@ -11,9 +11,12 @@ public class CountZNames{
   public static int countZNames(String [] nums){
    int count = 0;
     for (String num : nums)
-        if(num.substring(0,1).equals("Z" || "z")){
+        if(num.substring(0,1).equals("Z")){
       count += 1;
   }
+  else if (num.substring(0,1).equals("Z")){
+    count += 1;
+}
 
     return count;
 
