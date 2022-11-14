@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ArrayCountLucky {
   public static void testCountLucky(ArrayList<Integer>nums, int expected) {
    int correct = countLucky(nums);
