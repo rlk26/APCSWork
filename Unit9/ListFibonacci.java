@@ -12,14 +12,13 @@ public static ArrayList<Integer> fibonacciSequence(int hey){
     a = b;
     b = c;
   }
-  System.out.println(result);
   return result;
 }
 
 public static void main(String [] args){
-  fibonacciSequence(3);
-  fibonacciSequence(7);
-  fibonacciSequence(18);
+  System.out.println(fibonacciSequence(3));
+  System.out.println(fibonacciSequence(7));
+  System.out.println(fibonacciSequence(18));
 
 }
 }

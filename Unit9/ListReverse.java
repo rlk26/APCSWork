@@ -9,7 +9,6 @@ public static ArrayList<String> reverseAll(ArrayList<String>nums){
     hello = hello + num.charAt(i);
     result.add(hello);
 }
-System.out.println(result);
 return result;
 }
 
@@ -20,20 +19,20 @@ public static void main(String [] args){
    values.add("I");
    values.add("Am");
    values.add("Ramya");
-   reverseAll(values);
+   System.out.println(reverseAll(values));
 
   ArrayList<String> values2 = new ArrayList<String>();
    values2.add("Robotics");
    values2.add("Is");
    values2.add("Very");
    values2.add("Stressful");
-   reverseAll(values2);
+   System.out.println(reverseAll(values2));
 
   ArrayList<String> values3 = new ArrayList<String>();
    values3.add("But");
    values3.add("Also");
    values3.add("Really");
    values3.add("Fun");
-   reverseAll(values3);
+   System.out.println(reverseAll(values3));
 }
 }
