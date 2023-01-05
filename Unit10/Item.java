@@ -2,7 +2,7 @@ import java.util.*;
 public class Item {
   public Item (String nameIn, float priceIn){
     name = nameIn;
-    price = price;
+    price = priceIn;
   }
   public String getName(){
     return name;
