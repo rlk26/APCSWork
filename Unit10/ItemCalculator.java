@@ -38,12 +38,10 @@ public class ItemCalculator{
 
     public static String mostExpensive(ArrayList<Item> items){
       float result = 0;
-      float result2 = 0;
       String hey = "";
       for (Item i : items){
+        if(i.getPrice() > result){
         result = i.getPrice();
-        if(result > result2){
-        result2 = i.getPrice();
         hey = i.getName();
       }
       }
