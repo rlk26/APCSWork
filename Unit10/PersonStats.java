@@ -2,8 +2,8 @@ import java.util.*;
 public class PersonStats{
 
 
-  public static void testaveragePets(ArrayList<Person>persons, float expected){
-    float correct = averagePets(persons);
+  public static void testaveragePets(ArrayList<Person>persons, int expected){
+    int correct = averagePets(persons);
     System.out.println("Expected: " + expected + " Correct: " + correct);
     for(Person p : persons){
       System.out.println(p.getPetNum());
@@ -29,8 +29,8 @@ public class PersonStats{
     }
   }
 
-  public static float averagePets(ArrayList<Person>persons){
-    float result = 0;
+  public static int averagePets(ArrayList<Person>persons){
+    int result = 0;
     for (Person p : persons){
       result += p.getPetNum();
     }
@@ -38,7 +38,7 @@ public class PersonStats{
   }
 
   public static String mostPets(ArrayList<Person>persons){
-    float result = 0;
+    int result = 0;
     String hey = "";
     for (Person p : persons ){
       if(p.getPetNum() > result){

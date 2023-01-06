@@ -1,15 +1,15 @@
 import java.util.*;
 public class Person {
-  public Person (String nameIn, float petNumIn){
+  public Person (String nameIn, int petNumIn){
     name = nameIn;
     petNum = petNumIn;
   }
   public String getName(){
     return name;
   }
-  public float getPetNum(){
+  public int getPetNum(){
     return petNum;
   }
   private String name;
-  private float petNum;
+  private int petNum;
 }
