@@ -23,11 +23,13 @@ public class VehicleStats{
   }
 
   public static ArrayList<Vehicle> humanPowered(ArrayList<Vehicle>vehicles){
-    int result = 0;
+    ArrayList<Vehicle> humans = new ArrayList<Vehicle>();
     for(Vehicle v : vehicles){
-      result += v.wheelCount();
+      System.out.println(v.isHumanPowered());
+      if(v.isHumanPowered() == true)
+      humans.add(v);
     }
-    return result;
+    return humans;
   }
 
   public static void main(String [] args){
@@ -41,7 +43,7 @@ public class VehicleStats{
     Unicycle u1 = new Unicycle();
     vehicles.add(u1);
     testtotalWheels(vehicles,9);
-    humanPowered(vehicles);
+    System.out.println(humanPowered(vehicles));
 
   }
 }
