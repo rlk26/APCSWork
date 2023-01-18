@@ -20,7 +20,7 @@ public class Ball {
     }
   }
   public void display() {
-      pap.fill(255);
+      pap.fill(#85E8BE);
       pap.ellipse(p.x, p.y, r, r);
   }
   private PVector p;
