@@ -5,6 +5,7 @@ public class Ball {
     this.p = p;
     this.v = v;
     this.r = r;
+    life = 3;
 
 
   }
@@ -20,11 +21,12 @@ public class Ball {
     }
   }
   public void display() {
-      pap.fill(#85E8BE);
+      pap.fill(255);
       pap.ellipse(p.x, p.y, r, r);
   }
   private PVector p;
   private PVector v;
   private float r;
   private PApplet pap;
+  private int life;
 }
