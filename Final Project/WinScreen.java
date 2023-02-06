@@ -11,9 +11,11 @@ public class WinScreen implements Scene
     {
       pap.background(win);
       pap.textAlign(pap.CENTER);
-      pap.text("WINNER!",pap.width/2,pap.height/2-pap.height/14);
-      pap.textSize(pap.width/16);
-      pap.text("Press the Space Bar to Go Home",pap.width/2,pap.height/2+pap.height/14);
+      pap.fill(0);
+      pap.textSize(pap.width/45);
+      pap.text("WINNER!",pap.width/6,pap.height/4);
+      pap.textSize(pap.width/50);
+      pap.text("Press the Space Bar to Go Home",pap.width-pap.width/4,pap.height/4);
     }
     private PImage win;
 

@@ -1,4 +1,5 @@
 import processing.core.*;
+import java.util.*;
 public class HomeScreen implements Scene
 {
     public HomeScreen(PApplet pap, PImage home)
@@ -9,6 +10,7 @@ public class HomeScreen implements Scene
 
     public void display()
     {
+
       pap.background(home);
       pap.textAlign(pap.CENTER);
       pap.textSize(pap.width/12);
@@ -16,6 +18,5 @@ public class HomeScreen implements Scene
       pap.text("Press Enter to Begin",pap.width/2,pap.height/2+pap.height/16);
     }
     private PImage home;
-
     private PApplet pap;
 }

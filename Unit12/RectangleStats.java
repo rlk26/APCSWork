@@ -1,25 +1,32 @@
-public class Rectangle{
-  public static void main (String [] args){
-    int n = 10;
-    int[][] cells = new int[n][n];
+public class RectangleStats{
 
-    for (int i=0; i<n; i++)
-    {
-      for (int j=0; j<n; j++)
-      {
-        cells[i][j] = (i+j)%2;
+  public static double averagePerimeter(Rectangle rectangles[][]){
+    double result = 0;
+    int count = 0;
+    for (int i = 0; i < rectangles.length; i++) {
+      for (int j = 0; j < rectangles[0].length; j++) {
+         result += rectangles[i][j].perimeter();
+         count++;
+       }
+     }
+     return result/count;
+  }
+
+  public static Rectangle largestRectangle(Rectangle rectangles[][]) {
+
+    Rectangle result = rectangles[0][0];
+
+    for (int i = 0; i < rectangles.length; i++) {
+      for (int j = 0; j < rectangles[0].length; j++) {
+        if (rectangles[i][j].area() > result.area()) {
+        result = rectangles[i][j];
+        }
       }
     }
 
-  System.out.println("cells:");
+    return result;
+  }
+  public static void main (String [] args){
 
-  for (int[] row : cells)
-  {
-    for (int value : row)
-    {
-        System.out.print(value + " ");
-    }
-    System.out.println();
-}
-}
+  }
 }
