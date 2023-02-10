@@ -19,9 +19,7 @@ public class Rectangle {
   public double perimeter(){
     return base+height+base+height;
   }
-  public double diagonal(){
-    return Math.sqrt(base*base + height*height);
-  }
+
   private double base;
   private double height;
   private String name;
