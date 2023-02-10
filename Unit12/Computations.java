@@ -46,7 +46,7 @@ public class Computations{
   public static void main (String [] args){
     int hi = 3;
     String[][] cells = new String[hi][hi];
-    cells[0][1] = "element "
+    cells[0][1] = 
 
 
   }
