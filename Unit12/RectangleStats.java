@@ -28,5 +28,30 @@ public class RectangleStats{
   }
   public static void main (String [] args){
 
+    int t = 2;
+    Rectangle[][] cells = new Rectangle[t][t];
+    Rectangle r1 = new Rectangle("BiggyRect",40,50);
+    cells [0][0] = r1;
+    Rectangle r2 = new Rectangle("SmallRect",4,6);
+    cells [0][1] = r2;
+    Rectangle r3 = new Rectangle("MediumRect",23,39);
+    cells [1][0] = r3;
+    Rectangle r4 = new Rectangle("TinyRect",2,2);
+    cells [1][1] = r4;
+
+
+    for (Rectangle[] row : cells)
+      {
+          for (Rectangle value : row)
+            {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+
+    System.out.println(averagePerimeter(cells));
+    System.out.println(largestRectangle(cells));
+
+
   }
 }
