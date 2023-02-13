@@ -8,16 +8,19 @@ public class Block {
   }
   public void update() {
   }
+
   public boolean isInside(Ball b){
-    if(pap.dist(b.p.x,b.p.y,p.x,p.y) > w*h){
+    if(b.p.x>p.x && b.p.x<p.x+w && b.p.x>p.y && b.p.y<p.y+h){
+      //pap.fill(255,0,0);
+      b.v.y*=-1;
       return true;
-    }
-    else {
+    }else {
+      //pap.fill(255);
       return false;
     }
   }
+
   public void display() {
-      pap.fill(255);
       pap.rect(p.x,p.y,w,h);
   }
   private PVector p;

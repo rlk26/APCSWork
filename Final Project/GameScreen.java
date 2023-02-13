@@ -7,7 +7,7 @@ public class GameScreen implements Scene
         this.pap = pap;
 
         PVector p = new PVector(pap.width/2, pap.height-30);
-        PVector v = PVector.random2D();;
+        PVector v = PVector.random2D();
         v.setMag(pap.random(pap.width/266, pap.width/150));
         b = new Ball(pap,p,v,pap.height/40);
         blocks = new ArrayList<Block>();
@@ -18,6 +18,7 @@ public class GameScreen implements Scene
           blocks.add(b);
           }
         }
+        //PVector pp = new PVector(pap.width/);
     }
 
     public void display()
@@ -29,12 +30,9 @@ public class GameScreen implements Scene
       b.checkEdges();
       b.display();
       for (Block bl : blocks) {
+      bl.isInside(b);
       bl.display();
-      if(bl.isInside(b)==true){
-        b.v.x = -1;
-        b.v.y = -1;
       }
-  }
     }
     private Ball b;
     private ArrayList<Block>blocks;

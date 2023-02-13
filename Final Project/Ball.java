@@ -20,11 +20,6 @@ public class Ball {
       v.y*=-1;
     }
   }
-  /*public void isInside(float a, float b){
-    if(pap.dist(p.x,p.y,a,b) > r){
-
-    }
-  }*/
   public void display() {
       pap.fill(255);
       pap.ellipse(p.x, p.y, r, r);

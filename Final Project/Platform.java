@@ -8,8 +8,9 @@ public class Platform {
   }
   public void display() {
       pap.fill(255);
-      pap.rect(x,y,w,h);
+      pap.rect(p.x,p.y,w,h);
   }
-  private int x,y,w,h;
+  private PVector p;
+  private float w,h;
   private PApplet pap;
 }
