@@ -30,7 +30,7 @@ public class FinalProject extends PApplet {
     home.resize(width,height);
     win = loadImage("win.png");
     win.resize(width,height);
-    font = loadFont("endgame.zip");
+    font = loadFont("Phosphate-Inline-48.vlw");
     textFont(font);
     scenes = new ArrayList<Scene>();
     scenes.add(new HomeScreen(this,home));
