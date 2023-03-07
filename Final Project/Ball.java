@@ -5,7 +5,6 @@ public class Ball {
     this.p = p;
     this.v = v;
     this.r = r;
-    life = 3;
 
 
   }
@@ -26,7 +25,6 @@ public class Ball {
   }
   public PVector p;
   public PVector v;
-  private float r;
+  public float r;
   private PApplet pap;
-  private int life;
 }

@@ -45,17 +45,31 @@ public class FinalProject extends PApplet {
   }
 
   public void keyPressed(){
-      if (keyCode == ENTER)  {
-          if (current == 0){
-              current++;
-            }
-        }
+    if (keyCode == ENTER)  {
+      if (current == 0){
+        current++;
+      }
+    }
 
-        if (keyCode == SHIFT)  {
-            if (current == 1){
-                current++;
-              }
-          }
+    if (keyCode == SHIFT)  {
+      if (current == 1){
+        current++;
+      }
+    }
+    if(keyCode == ' '){
+      if(current == 2){
+        current = 0;
+      }
+    }
+
+    if(current == 1){
+      if(keyCode == LEFT){
+        GameScreen.plat.vx *= -10;
+      }
+      else if(keyCode == RIGHT){
+        GameScreen.plat.vx *= 10;
+      }
+    }
   }
 
   public static void main(String [] args){

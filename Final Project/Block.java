@@ -10,12 +10,12 @@ public class Block {
   }
 
   public boolean isInside(Ball b){
-    if(b.p.x>p.x && b.p.x<p.x+w && b.p.x>p.y && b.p.y<p.y+h){
+    if(b.p.x+b.r>p.x && b.p.x+b.r<p.x+w && b.p.y+b.r>p.y && b.p.y+b.r<p.y+h){
       //pap.fill(255,0,0);
       b.v.y*=-1;
       return true;
     }else {
-      //pap.fill(255);
+      pap.fill(255);
       return false;
     }
   }
