@@ -12,7 +12,7 @@ public class Platform {
     x += vx;
   }
   public void checkEdges(){
-    if (x > pap.width || x < 0) {
+    if (x > pap.width-w || x < 0) {
      vx = 0;
     }
   }
@@ -33,18 +33,6 @@ public class Platform {
       pap.rect(x,y,w,h);
   }
 
-
-  public void keyPressed(){
-    if(pap.keyCode == pap.LEFT){
-      vx *= -10;
-    }
-    else if(pap.keyCode == pap.RIGHT){
-      vx *= 10;
-    }
-    //else {
-    //  vx = 0;
-    //}
-  }
   private int x,y;
   public int vx;
   private float w,h;

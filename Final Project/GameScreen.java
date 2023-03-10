@@ -29,7 +29,7 @@ public class GameScreen implements Scene
       plat.update();
       plat.checkEdges();
       plat.isInside(b);
-      plat.keyPressed();
+    //  plat.keyPressed();
       plat.display();
       b.update();
       b.checkEdges();

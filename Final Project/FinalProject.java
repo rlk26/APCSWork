@@ -9,6 +9,8 @@ public class FinalProject extends PApplet {
 
   PImage win;
 
+  PImage end;
+
   PFont font;
 
   Ball b;
@@ -30,12 +32,15 @@ public class FinalProject extends PApplet {
     home.resize(width,height);
     win = loadImage("win.png");
     win.resize(width,height);
+    win = loadImage("end.png");
+    win.resize(width,height);
     font = loadFont("Phosphate-Inline-48.vlw");
     textFont(font);
     scenes = new ArrayList<Scene>();
     scenes.add(new HomeScreen(this,home));
     scenes.add(new GameScreen(this));
     scenes.add(new WinScreen(this,win));
+    scenes.add(new EndScreen(this,end));
   }
 
   public void draw()
@@ -62,12 +67,32 @@ public class FinalProject extends PApplet {
       }
     }
 
+    if(keyCode == ' '){
+      if(current == 1){
+        current = 3;
+      }
+    }
+
     if(current == 1){
       if(keyCode == LEFT){
-        GameScreen.plat.vx *= -10;
+      GameScreen.plat.vx += -10;
       }
       else if(keyCode == RIGHT){
-        GameScreen.plat.vx *= 10;
+      GameScreen.plat.vx += 10;
+      }
+      else {
+       GameScreen.plat.vx = 0;
+      }
+    }
+  }
+
+  public void keyReleased(){
+    if(current == 1){
+      if(keyCode == LEFT){
+      GameScreen.plat.vx = 0;
+      }
+      else if(keyCode == RIGHT){
+      GameScreen.plat.vx = 0;
       }
     }
   }
