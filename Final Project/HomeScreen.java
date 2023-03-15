@@ -14,6 +14,7 @@ public class HomeScreen implements Scene
       pap.background(home);
       pap.textAlign(pap.CENTER);
       pap.textSize(pap.width/18);
+      pap.fill(255);
       pap.text("Welcome to Brick Breaker",pap.width/2,pap.height/2-pap.height/16);
       pap.text("Press Enter to Begin",pap.width/2,pap.height/2+pap.height/16);
     }

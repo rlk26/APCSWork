@@ -6,8 +6,6 @@ public class Block {
     this. w = w;
     this.h = h;
   }
-  public void update() {
-  }
 
   public boolean isInside(Ball b){
     if(b.p.x+b.r>p.x && b.p.x+b.r<p.x+w && b.p.y+b.r>p.y && b.p.y+b.r<p.y+h){

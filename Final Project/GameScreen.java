@@ -5,12 +5,13 @@ public class GameScreen implements Scene
     public GameScreen(PApplet pap)
     {
         this.pap = pap;
-        plat = new Platform(pap,pap.width/2,pap.height/2 + pap.height/4 + pap.height/6,pap.width/15,pap.height/45);
-        PVector p = new PVector(pap.width/2, pap.height/4*3);
-        PVector v = new PVector(15,15);
+        plat = new Platform(pap,pap.width/2,pap.height/2 + pap.height/4 + pap.height/6,pap.width/10,pap.height/45);
+        PVector p = new PVector(pap.width/2, pap.height-pap.height/4);
+        PVector v = new PVector(pap.width/60,pap.height/60);
         //PVector platp = new PVector(pap.width/2,pap.height/2+pap.height/4*3);
         v.setMag(pap.random(pap.width/266, pap.width/150));
-        b = new Ball(pap,p,v,pap.height/40);
+        life = 3;
+        b = new Ball(pap,p,v,pap.height/40,life);
         blocks = new ArrayList<Block>();
         for (int i = 0; i < pap.width; i+=pap.width/10) {
         for (int j = 0; j < pap.height/2; j+=pap.height/10) {
@@ -19,7 +20,6 @@ public class GameScreen implements Scene
           blocks.add(b);
           }
         }
-
     }
 
     public void display()
@@ -33,6 +33,7 @@ public class GameScreen implements Scene
       plat.display();
       b.update();
       b.checkEdges();
+      //b.checkBottom(plat);
       b.display();
       for (int i = blocks.size()-1; i >= 0;i--) {
         Block bl = blocks.get(i);
@@ -44,7 +45,8 @@ public class GameScreen implements Scene
         }
       }
     }
-    private Ball b;
+    public static Ball b;
+    public static int life;
     public static Platform plat;
     private ArrayList<Block>blocks;
     private PApplet pap;

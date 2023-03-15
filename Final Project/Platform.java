@@ -33,7 +33,7 @@ public class Platform {
       pap.rect(x,y,w,h);
   }
 
-  private int x,y;
+  public int x,y;
   public int vx;
   private float w,h;
   private PApplet pap;

@@ -15,7 +15,7 @@ public class EndScreen implements Scene
       pap.textAlign(pap.CENTER);
       pap.textSize(pap.width/18);
       //pap.text("GAME OVER",pap.width/2,pap.height/2-pap.height/16);
-      pap.text("Press SHIFT to play againn",pap.width/2,pap.height/2+pap.height/16);
+      pap.text("Press Z to play again",pap.width/2,pap.height/2+pap.height/4);
     }
     private PImage end;
     private PApplet pap;

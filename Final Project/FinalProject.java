@@ -15,6 +15,8 @@ public class FinalProject extends PApplet {
 
   Ball b;
 
+  PImage one, two, three;
+
 
   ArrayList<Scene> scenes;
 
@@ -32,12 +34,19 @@ public class FinalProject extends PApplet {
     home.resize(width,height);
     win = loadImage("win.png");
     win.resize(width,height);
-    win = loadImage("end.png");
-    win.resize(width,height);
+    end = loadImage("end.png");
+    end.resize(width,height);
     font = loadFont("Phosphate-Inline-48.vlw");
+    one = loadImage("one.png");
+    one.resize(100,100);
+    two = loadImage("two.png");
+    two.resize(100,100);
+    three = loadImage("three.png");
+    three.resize(100,100);
     textFont(font);
     scenes = new ArrayList<Scene>();
     scenes.add(new HomeScreen(this,home));
+    scenes.add(new LevelSelector(this, one, two, three));
     scenes.add(new GameScreen(this));
     scenes.add(new WinScreen(this,win));
     scenes.add(new EndScreen(this,end));
@@ -46,7 +55,17 @@ public class FinalProject extends PApplet {
   public void draw()
   {
     scenes.get(current).display();
-
+    if(current == 2){
+    if(GameScreen.b.checkBottom(GameScreen.plat)==true){
+      current += 2;
+    }
+    if(GameScreen.b.checkWin()==true){
+      current++;
+    }
+  }
+    if(current == 0){
+      GameScreen.life = 3;
+    }
   }
 
   public void keyPressed(){
@@ -55,25 +74,18 @@ public class FinalProject extends PApplet {
         current++;
       }
     }
-
-    if (keyCode == SHIFT)  {
-      if (current == 1){
-        current++;
+    if(keyCode == ' '){
+      if(current == 3){
+        current = 0;
       }
     }
-    if(keyCode == ' '){
-      if(current == 2){
+    if(current == 4){
+      if(keyCode == 'z' || keyCode == 'Z'){
         current = 0;
       }
     }
 
-    if(keyCode == ' '){
-      if(current == 1){
-        current = 3;
-      }
-    }
-
-    if(current == 1){
+    if(current == 2){
       if(keyCode == LEFT){
       GameScreen.plat.vx += -10;
       }
@@ -87,7 +99,7 @@ public class FinalProject extends PApplet {
   }
 
   public void keyReleased(){
-    if(current == 1){
+    if(current == 2){
       if(keyCode == LEFT){
       GameScreen.plat.vx = 0;
       }
