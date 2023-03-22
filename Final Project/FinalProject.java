@@ -38,11 +38,11 @@ public class FinalProject extends PApplet {
     end.resize(width,height);
     font = loadFont("Phosphate-Inline-48.vlw");
     one = loadImage("one.png");
-    one.resize(100,100);
+    one.resize(width/5,width/5);
     two = loadImage("two.png");
-    two.resize(100,100);
+    two.resize(width/5,width/5);
     three = loadImage("three.png");
-    three.resize(100,100);
+    three.resize(width/5,width/5);
     textFont(font);
     scenes = new ArrayList<Scene>();
     scenes.add(new HomeScreen(this,home));
@@ -50,21 +50,30 @@ public class FinalProject extends PApplet {
     scenes.add(new GameScreen(this));
     scenes.add(new WinScreen(this,win));
     scenes.add(new EndScreen(this,end));
+    scenes.add(new GameScreen2(this));
+    scenes.add(new GameScreen3(this));
   }
 
   public void draw()
   {
     scenes.get(current).display();
-    if(current == 2){
+    if(current == 2 || current == 5){
     if(GameScreen.b.checkBottom(GameScreen.plat)==true){
       current += 2;
     }
     if(GameScreen.b.checkWin()==true){
       current++;
     }
+    if(GameScreen2.b.checkBottom(GameScreen2.plat)==true){
+      current--;
+    }
+    if(GameScreen2.b.checkWin()==true){
+      current -= 1;
+    }
   }
     if(current == 0){
-      GameScreen.life = 3;
+      GameScreen.b.life = 3;
+      GameScreen2.b.life = 3;
     }
   }
 
@@ -73,7 +82,7 @@ public class FinalProject extends PApplet {
       if (current == 0){
         current++;
       }
-    }
+  }
     if(keyCode == ' '){
       if(current == 3){
         current = 0;
@@ -85,28 +94,44 @@ public class FinalProject extends PApplet {
       }
     }
 
-    if(current == 2){
+    if(current == 2 || current == 5){
       if(keyCode == LEFT){
-      GameScreen.plat.vx += -10;
+      GameScreen.plat.vx += -width/90;
+      GameScreen2.plat.vx += -width/80;
       }
       else if(keyCode == RIGHT){
-      GameScreen.plat.vx += 10;
+      GameScreen.plat.vx += width/90;
+      GameScreen2.plat.vx += width/80;
       }
       else {
        GameScreen.plat.vx = 0;
+       GameScreen2.plat.vx = 0;
       }
     }
   }
 
   public void keyReleased(){
-    if(current == 2){
+    if(current == 2 || current == 5){
       if(keyCode == LEFT){
       GameScreen.plat.vx = 0;
+      GameScreen2.plat.vx = 0;
       }
       else if(keyCode == RIGHT){
       GameScreen.plat.vx = 0;
+      GameScreen2.plat.vx = 0;
       }
     }
+  }
+  public void mouseClicked(){
+    if(current == 1){
+    if(dist(width/4,height/2,mouseX,mouseY)<width/8){
+      //System.out.println("lalal");
+      current++;
+    }
+      if(dist(width/2,height/2,mouseX,mouseY)<width/8){
+        current += 4;
+      }
+  }
   }
 
   public static void main(String [] args){

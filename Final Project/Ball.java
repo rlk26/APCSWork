@@ -21,15 +21,15 @@ public class Ball {
     //}
   }
   public boolean checkBottom(Platform pl){
-    if (p.y > pap.height && life == 0) {
-      return true;
-    } else if (p.y > pap.height && life != 0){
+    if (p.y > pap.height && life > 0){
       life--;
       p.y = pl.y-pap.height/10;
       p.x = pl.x;
       v.x *= -1;
       v.y *= -1;
       return false;
+    } else if (p.y > pap.height && life == 0) {
+        return true;
     } else {
       return false;
     }

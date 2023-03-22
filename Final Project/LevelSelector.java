@@ -5,19 +5,23 @@ public class LevelSelector implements Scene
     public LevelSelector(PApplet pap, PImage one, PImage two, PImage three)
     {
         this.pap = pap;
+        this.one = one;
+        this.two = two;
+        this.three = three;
     }
 
     public void display()
     {
 
-      pap.background(0);
-      pap.fill(255);
-      pap.textAlign(pap.CENTER);
-      pap.textSize(pap.width/18);
+      pap.background(255);
+      pap.fill(0);
+      pap.imageMode(pap.CENTER);
       pap.image(one,pap.width/4,pap.height/2);
       pap.image(two,pap.width/2,pap.height/2);
       pap.image(three,pap.width/4+pap.width/2,pap.height/2);
-      pap.text("Press Z to play again",pap.width/2,pap.height/4);
+      pap.textAlign(pap.CENTER);
+      pap.textSize(pap.width/18);
+      pap.text("Click to choose a level",pap.width/2,pap.height/4);
     }
     private PImage end;
     private PImage one, two, three;

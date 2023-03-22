@@ -1,26 +1,28 @@
 import processing.core.*;
 import java.util.*;
-public class GameScreen implements Scene
+public class GameScreen3 implements Scene
 {
-    public GameScreen(PApplet pap)
+    public GameScreen3(PApplet pap)
     {
         this.pap = pap;
-        plat = new Platform(pap,pap.width/2,pap.height/2 + pap.height/4 + pap.height/6,pap.width/10,pap.height/45);
+        plat = new Platform(pap,pap.width/2,pap.height/2 + pap.height/4 + pap.height/6,pap.width/12,pap.height/45);
         PVector p = new PVector(pap.width/2, pap.height-pap.height/4);
         PVector v = new PVector(pap.width/60,pap.height/60);
         //PVector platp = new PVector(pap.width/2,pap.height/2+pap.height/4*3);
-        v.setMag(pap.random(pap.width/266, pap.height/150));
+        v.setMag(pap.random(pap.width/180, pap.height/125));
         life = 3;
         b = new Ball(pap,p,v,pap.height/40,life);
         blocks = new ArrayList<Block>();
-        for (int i = 0; i < pap.width; i+=pap.width/10) {
-        for (int j = 0; j < pap.height/2; j+=pap.height/10) {
+        for (int i = 0; i < pap.width; i+=pap.width/20) {
+        for (int j = 0; j < pap.height/2; j+=pap.height/12) {
           PVector ij = new PVector(i,j);
-          Block b = new Block(pap,ij,pap.width/10,pap.height/10);
+          Block b = new Block(pap,ij,pap.width/20,pap.height/12);
           blocks.add(b);
           }
         }
     }
+
+
 
     public void display()
     {
