@@ -57,13 +57,15 @@ public class FinalProject extends PApplet {
   public void draw()
   {
     scenes.get(current).display();
-    if(current == 2 || current == 5){
+    if(current == 2){
     if(GameScreen.b.checkBottom(GameScreen.plat)==true){
       current += 2;
     }
     if(GameScreen.b.checkWin()==true){
       current++;
     }
+  }
+    if(current == 5){
     if(GameScreen2.b.checkBottom(GameScreen2.plat)==true){
       current--;
     }
@@ -94,17 +96,25 @@ public class FinalProject extends PApplet {
       }
     }
 
-    if(current == 2 || current == 5){
+    if(current == 2){
       if(keyCode == LEFT){
       GameScreen.plat.vx += -width/90;
-      GameScreen2.plat.vx += -width/80;
       }
       else if(keyCode == RIGHT){
       GameScreen.plat.vx += width/90;
-      GameScreen2.plat.vx += width/80;
       }
       else {
        GameScreen.plat.vx = 0;
+      }
+    }
+    if(current == 5){
+      if(keyCode == LEFT){
+      GameScreen2.plat.vx += -width/80;
+      }
+      else if(keyCode == RIGHT){
+      GameScreen2.plat.vx += width/80;
+      }
+      else {
        GameScreen2.plat.vx = 0;
       }
     }
@@ -114,10 +124,16 @@ public class FinalProject extends PApplet {
     if(current == 2 || current == 5){
       if(keyCode == LEFT){
       GameScreen.plat.vx = 0;
-      GameScreen2.plat.vx = 0;
       }
       else if(keyCode == RIGHT){
       GameScreen.plat.vx = 0;
+      }
+    }
+    if(current == 5){
+      if(keyCode == LEFT){
+      GameScreen2.plat.vx = 0;
+      }
+      else if(keyCode == RIGHT){
       GameScreen2.plat.vx = 0;
       }
     }
