@@ -29,6 +29,7 @@ public class Ball {
       v.y *= -1;
       return false;
     } else if (p.y > pap.height && life == 0) {
+        //System.out.println("Hi");
         return true;
     } else {
       return false;

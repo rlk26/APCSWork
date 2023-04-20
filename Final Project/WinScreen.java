@@ -7,6 +7,9 @@ public class WinScreen implements Scene
         this.win = win;
     }
 
+    public void reDo(){
+    }
+    
     public void display()
     {
       pap.background(win);
@@ -16,6 +19,19 @@ public class WinScreen implements Scene
       pap.text("WINNER!",pap.width/6,pap.height/4);
       pap.textSize(pap.width/50);
       pap.text("Press the Space Bar to Go Home",pap.width-pap.width/4,pap.height/4);
+    }
+    public boolean isWon() {
+      return false;
+    }
+    public boolean isLost() {
+      return false;
+    }
+    public void handleMouseClicked(){
+    }
+    public void handleKeyPressed(){
+    }
+    public void handleKeyReleased(){
+
     }
     private PImage win;
 

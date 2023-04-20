@@ -8,6 +8,8 @@ public class EndScreen implements Scene
         this.end = end;
     }
 
+    public void reDo(){
+    }
     public void display()
     {
 
@@ -16,6 +18,18 @@ public class EndScreen implements Scene
       pap.textSize(pap.width/18);
       //pap.text("GAME OVER",pap.width/2,pap.height/2-pap.height/16);
       pap.text("Press Z to play again",pap.width/2,pap.height/2+pap.height/4);
+    }
+    public boolean isWon() {
+      return false;
+    }
+    public boolean isLost() {
+      return false;
+    }
+    public void handleMouseClicked(){
+    }
+    public void handleKeyPressed(){
+    }
+    public void handleKeyReleased(){
     }
     private PImage end;
     private PApplet pap;

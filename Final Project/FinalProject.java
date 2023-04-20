@@ -5,7 +5,7 @@ public class FinalProject extends PApplet {
 
   //String gameState;
 
-  PImage home;
+  PImage home, button1;
 
   PImage win;
 
@@ -43,9 +43,11 @@ public class FinalProject extends PApplet {
     two.resize(width/5,width/5);
     three = loadImage("three.png");
     three.resize(width/5,width/5);
+    button1 = loadImage("BlockButton.png");
+    button1.resize(width/2,height/10);
     textFont(font);
     scenes = new ArrayList<Scene>();
-    scenes.add(new HomeScreen(this,home));
+    scenes.add(new HomeScreen(this,home,button1));
     scenes.add(new LevelSelector(this, one, two, three));
     scenes.add(new GameScreen(this));
     scenes.add(new WinScreen(this,win));
@@ -58,28 +60,36 @@ public class FinalProject extends PApplet {
   {
     scenes.get(current).display();
     if(current == 2){
-    if(GameScreen.b.checkBottom(GameScreen.plat)==true){
+    if(scenes.get(current).isLost()){
       current += 2;
     }
-    if(GameScreen.b.checkWin()==true){
+    if(scenes.get(current).isWon()){
       current++;
     }
   }
     if(current == 5){
-    if(GameScreen2.b.checkBottom(GameScreen2.plat)==true){
+    if(scenes.get(current).isLost()){
       current--;
     }
-    if(GameScreen2.b.checkWin()==true){
+    if(scenes.get(current).isWon()){
       current -= 1;
     }
   }
-    if(current == 0){
-      GameScreen.b.life = 3;
-      GameScreen2.b.life = 3;
+    if(current == 6){
+    if(scenes.get(current).isLost()){
+      current -= 1;
     }
+    if(scenes.get(current).isWon()){
+      current -= 2;
+    }
+  }
   }
 
   public void keyPressed(){
+    if(current == 2 || current == 5 || current == 6){
+    scenes.get(current).handleKeyPressed();
+  }
+
     if (keyCode == ENTER)  {
       if (current == 0){
         current++;
@@ -92,53 +102,25 @@ public class FinalProject extends PApplet {
     }
     if(current == 4){
       if(keyCode == 'z' || keyCode == 'Z'){
+        GameScreen gameScene = (GameScreen)scenes.get(2);
+        gameScene.reDo();
+        GameScreen2 gameScene2 = (GameScreen2)scenes.get(5);
+        gameScene2.reDo();
+        GameScreen3 gameScene3 = (GameScreen3)scenes.get(6);
+        gameScene3.reDo();
         current = 0;
-      }
-    }
-
-    if(current == 2){
-      if(keyCode == LEFT){
-      GameScreen.plat.vx += -width/90;
-      }
-      else if(keyCode == RIGHT){
-      GameScreen.plat.vx += width/90;
-      }
-      else {
-       GameScreen.plat.vx = 0;
-      }
-    }
-    if(current == 5){
-      if(keyCode == LEFT){
-      GameScreen2.plat.vx += -width/80;
-      }
-      else if(keyCode == RIGHT){
-      GameScreen2.plat.vx += width/80;
-      }
-      else {
-       GameScreen2.plat.vx = 0;
       }
     }
   }
 
   public void keyReleased(){
-    if(current == 2 || current == 5){
-      if(keyCode == LEFT){
-      GameScreen.plat.vx = 0;
-      }
-      else if(keyCode == RIGHT){
-      GameScreen.plat.vx = 0;
-      }
-    }
-    if(current == 5){
-      if(keyCode == LEFT){
-      GameScreen2.plat.vx = 0;
-      }
-      else if(keyCode == RIGHT){
-      GameScreen2.plat.vx = 0;
-      }
-    }
+    scenes.get(current).handleKeyReleased();
   }
   public void mouseClicked(){
+    scenes.get(current).handleMouseClicked();
+    if(current == 0){
+      if(mouseX>width/4 && mouseX<width/4+width/2 && mouseY>height/2 && )
+    }
     if(current == 1){
     if(dist(width/4,height/2,mouseX,mouseY)<width/8){
       //System.out.println("lalal");
@@ -146,6 +128,10 @@ public class FinalProject extends PApplet {
     }
       if(dist(width/2,height/2,mouseX,mouseY)<width/8){
         current += 4;
+      }
+      if(dist(width/4+width/2,height/2,mouseX,mouseY)<width/8){
+        //System.out.println("lalal");
+        current+=5;
       }
   }
   }

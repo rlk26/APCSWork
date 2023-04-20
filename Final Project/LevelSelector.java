@@ -10,6 +10,9 @@ public class LevelSelector implements Scene
         this.three = three;
     }
 
+    public void reDo(){
+    }
+    
     public void display()
     {
 
@@ -22,6 +25,19 @@ public class LevelSelector implements Scene
       pap.textAlign(pap.CENTER);
       pap.textSize(pap.width/18);
       pap.text("Click to choose a level",pap.width/2,pap.height/4);
+    }
+    public boolean isWon() {
+      return false;
+    }
+    public boolean isLost() {
+      return false;
+    }
+    public void handleMouseClicked(){
+    }
+    public void handleKeyPressed(){
+    }
+    public void handleKeyReleased(){
+
     }
     private PImage end;
     private PImage one, two, three;
