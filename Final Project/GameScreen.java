@@ -2,9 +2,10 @@ import processing.core.*;
 import java.util.*;
 public class GameScreen implements Scene
 {
-    public GameScreen(PApplet pap)
+    public GameScreen(PApplet pap, PImage game)
     {
         this.pap = pap;
+        this.game = game;
         reDo();
     }
     public void reDo(){
@@ -28,7 +29,7 @@ public class GameScreen implements Scene
 
     public void display()
     {
-      pap.background(0);
+      pap.background(game);
       pap.textSize(pap.width/12);
       plat.update();
       plat.checkEdges();
@@ -89,6 +90,7 @@ public class GameScreen implements Scene
     }
     private Ball b;
     private int life;
+    private PImage game;
     private Platform plat;
     private ArrayList<Block>blocks;
     private PApplet pap;

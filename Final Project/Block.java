@@ -2,6 +2,7 @@ import processing.core.*;
 public class Block {
   public Block(PApplet pap, PVector p, float w, float h){
     this.pap = pap;
+    //this.blocker = blocker;
     this.p = p;
     this. w = w;
     this.h = h;
@@ -19,6 +20,7 @@ public class Block {
   }
 
   public void display() {
+
       pap.rect(p.x,p.y,w,h);
   }
   private PVector p;

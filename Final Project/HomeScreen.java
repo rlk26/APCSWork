@@ -2,11 +2,10 @@ import processing.core.*;
 import java.util.*;
 public class HomeScreen implements Scene
 {
-    public HomeScreen(PApplet pap, PImage home, PImage homeButton)
+    public HomeScreen(PApplet pap, PImage home)
     {
         this.pap = pap;
         this.home = home;
-        this.homeButton = homeButton;
     }
 
     public void reDo(){
@@ -20,10 +19,10 @@ public class HomeScreen implements Scene
       pap.textSize(pap.width/18);
       pap.fill(255);
       pap.text("Welcome to Bricks n Balls!",pap.width/2,pap.height/2-pap.height/16);
-      pap.text("Click the Button Above to Begin!",pap.width/2,pap.height/2+pap.height/8);
-      pap.imageMode(pap.CENTER);
+      pap.text("Click the Enter Key to Begin!",pap.width/2,pap.height/2+pap.height/16);
+      //pap.imageMode(pap.CENTER);
       //if(mouseX<width/2-)
-      pap.image(homeButton,pap.width/2,pap.height/2);
+      //pap.image(homeButton,pap.width/2,pap.height/2);
     }
     public boolean isWon() {
       return false;
@@ -37,6 +36,6 @@ public class HomeScreen implements Scene
     }
     public void handleKeyReleased(){
     }
-    private PImage home, homeButton;
+    private PImage home;
     private PApplet pap;
 }

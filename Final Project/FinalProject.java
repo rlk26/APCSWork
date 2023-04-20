@@ -9,6 +9,8 @@ public class FinalProject extends PApplet {
 
   PImage win;
 
+  PImage game, game2, game3;
+
   PImage end;
 
   PFont font;
@@ -32,6 +34,12 @@ public class FinalProject extends PApplet {
   {
     home = loadImage("background.jpg");
     home.resize(width,height);
+    game = loadImage("game.png");
+    game.resize(width,height);
+    game2 = loadImage("Game2.png");
+    game2.resize(width,height);
+    game3 = loadImage("Game3.png");
+    game3.resize(width,height);
     win = loadImage("win.png");
     win.resize(width,height);
     end = loadImage("end.png");
@@ -47,13 +55,13 @@ public class FinalProject extends PApplet {
     button1.resize(width/2,height/10);
     textFont(font);
     scenes = new ArrayList<Scene>();
-    scenes.add(new HomeScreen(this,home,button1));
+    scenes.add(new HomeScreen(this, home));
     scenes.add(new LevelSelector(this, one, two, three));
-    scenes.add(new GameScreen(this));
+    scenes.add(new GameScreen(this,game));
     scenes.add(new WinScreen(this,win));
     scenes.add(new EndScreen(this,end));
-    scenes.add(new GameScreen2(this));
-    scenes.add(new GameScreen3(this));
+    scenes.add(new GameScreen2(this, game2));
+    scenes.add(new GameScreen3(this, game3));
   }
 
   public void draw()
@@ -118,9 +126,6 @@ public class FinalProject extends PApplet {
   }
   public void mouseClicked(){
     scenes.get(current).handleMouseClicked();
-    if(current == 0){
-      if(mouseX>width/4 && mouseX<width/4+width/2 && mouseY>height/2 && )
-    }
     if(current == 1){
     if(dist(width/4,height/2,mouseX,mouseY)<width/8){
       //System.out.println("lalal");
