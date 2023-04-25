@@ -9,7 +9,7 @@ public class WinScreen implements Scene
 
     public void reDo(){
     }
-    
+
     public void display()
     {
       pap.background(win);
@@ -31,6 +31,10 @@ public class WinScreen implements Scene
     public void handleKeyPressed(){
     }
     public void handleKeyReleased(){
+
+    }
+
+    public void saveHighScore(){
 
     }
     private PImage win;

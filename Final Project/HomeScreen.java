@@ -36,6 +36,10 @@ public class HomeScreen implements Scene
     }
     public void handleKeyReleased(){
     }
+
+    public void saveHighScore(){
+
+    }
     private PImage home;
     private PApplet pap;
 }

@@ -31,6 +31,10 @@ public class EndScreen implements Scene
     }
     public void handleKeyReleased(){
     }
+
+    public void saveHighScore(){
+
+    }
     private PImage end;
     private PApplet pap;
 }

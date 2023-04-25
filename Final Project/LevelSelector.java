@@ -12,7 +12,7 @@ public class LevelSelector implements Scene
 
     public void reDo(){
     }
-    
+
     public void display()
     {
 
@@ -37,6 +37,10 @@ public class LevelSelector implements Scene
     public void handleKeyPressed(){
     }
     public void handleKeyReleased(){
+
+    }
+
+    public void saveHighScore(){
 
     }
     private PImage end;

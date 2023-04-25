@@ -8,6 +8,14 @@ public class GameScreen implements Scene
         this.game = game;
         reDo();
     }
+
+    public void saveHighScore(){
+      String scoreString = "" + score;
+      String [] scores = {scoreString};
+      pap.saveStrings(filename, scores);
+      System.out.println(scoreString);
+    }
+
     public void reDo(){
       //System.out.println("Hello");
       plat = new Platform(pap,pap.width/2,pap.height/2 + pap.height/4 + pap.height/6,pap.width/10,pap.height/45);
@@ -25,11 +33,15 @@ public class GameScreen implements Scene
         blocks.add(b);
         }
       }
+      score = 0;
+      filename = "highScore.txt";
+      //line = pap.loadStrings(filename);
     }
 
     public void display()
     {
       pap.background(game);
+      pap.text("Score: " + score, 0 + pap.width/6, pap.height - pap.height/12);
       pap.textSize(pap.width/12);
       plat.update();
       plat.checkEdges();
@@ -46,12 +58,14 @@ public class GameScreen implements Scene
         //bl.isInside(b);
         if(bl.isInside(b)==true){
         blocks.remove(i);
+        score +=1;
         bl.display();
         }
       }
     }
     public boolean isWon() {
       if (b.checkWin()==true){
+        saveHighScore();
         return true;
       }
       else {
@@ -60,6 +74,7 @@ public class GameScreen implements Scene
     }
     public boolean isLost() {
       if (b.checkBottom(plat)==true){
+        saveHighScore();
         return true;
       }
       else {
@@ -70,10 +85,10 @@ public class GameScreen implements Scene
     }
     public void handleKeyPressed(){
       if(pap.keyCode == pap.LEFT){
-        plat.vx -= pap.width/90;
+        plat.vx -= pap.width/140;
       }
       else if(pap.keyCode == pap.RIGHT){
-        plat.vx += pap.width/90;
+        plat.vx += pap.width/150;
       }
       else {
        plat.vx = 0;
@@ -88,9 +103,13 @@ public class GameScreen implements Scene
         }
 
     }
+
     private Ball b;
     private int life;
     private PImage game;
+    private int score;
+    private String filename;
+    private String [] line;
     private Platform plat;
     private ArrayList<Block>blocks;
     private PApplet pap;

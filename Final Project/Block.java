@@ -6,6 +6,8 @@ public class Block {
     this.p = p;
     this. w = w;
     this.h = h;
+    blocker = pap.loadImage("BlockButton.png");
+  //  blocker.resize(w,h);
   }
 
   public boolean isInside(Ball b){
@@ -20,9 +22,10 @@ public class Block {
   }
 
   public void display() {
-
+      //pap.image(blocker,p.x,p.y);
       pap.rect(p.x,p.y,w,h);
   }
+  private PImage blocker;
   private PVector p;
   private float w, h;
   private PApplet pap;

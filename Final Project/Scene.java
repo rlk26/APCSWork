@@ -7,5 +7,6 @@ public interface Scene
     public void handleKeyPressed();
     public void handleKeyReleased();
     public void handleMouseClicked();
+    public void saveHighScore();
 
 }

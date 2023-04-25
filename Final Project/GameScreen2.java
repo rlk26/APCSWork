@@ -26,13 +26,13 @@ public class GameScreen2 implements Scene
         blocks.add(b);
         }
       }
+      score = 0;
     }
-
-
 
     public void display()
     {
       pap.background(game2);
+      pap.text("Score: " + score, 0 + pap.width/6, pap.height - pap.height/12);
       pap.textSize(pap.width/12);
       plat.update();
       plat.checkEdges();
@@ -49,6 +49,7 @@ public class GameScreen2 implements Scene
         //bl.isInside(b);
         if(bl.isInside(b)==true){
         blocks.remove(i);
+        score +=1;
         bl.display();
         }
       }
@@ -62,6 +63,7 @@ public class GameScreen2 implements Scene
         return false;
       }
     }
+
     public boolean isLost() {
       if (b.checkBottom(plat)==true){
         return true;
@@ -70,9 +72,10 @@ public class GameScreen2 implements Scene
         return false;
       }
     }
-    public void handleMouseClicked(){
 
+    public void handleMouseClicked(){
     }
+
     public void handleKeyPressed(){
       if(pap.keyCode == pap.LEFT){
         plat.vx -= pap.width/80;
@@ -93,9 +96,14 @@ public class GameScreen2 implements Scene
       }
     }
 
+    public void saveHighScore(){
+
+    }
+
     private Ball b;
     private int life;
     private Platform plat;
+    private int score;
     private PImage game2;
     private ArrayList<Block>blocks;
     private PApplet pap;
