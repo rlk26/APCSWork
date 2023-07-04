@@ -24,7 +24,7 @@ public class LevelSelector implements Scene
       pap.image(three,pap.width/4+pap.width/2,pap.height/2);
       pap.textAlign(pap.CENTER);
       pap.textSize(pap.width/18);
-      pap.text("Click to choose a level",pap.width/2,pap.height/4);
+      pap.text("Click to Choose a Level",pap.width/2,pap.height/4);
     }
     public boolean isWon() {
       return false;

@@ -13,7 +13,7 @@ public class GameScreen3 implements Scene
       this.pap = pap;
       plat = new Platform(pap,pap.width/2,pap.height/2 + pap.height/4 + pap.height/6,pap.width/12,pap.height/45);
       PVector p = new PVector(pap.width/2, pap.height-pap.height/4);
-      PVector v = new PVector(pap.width/60,pap.height/60);
+      PVector v = new PVector(pap.width/30,pap.height/30);
       //PVector platp = new PVector(pap.width/2,pap.height/2+pap.height/4*3);
       v.setMag(pap.random(pap.width/180, pap.height/125));
       life = 3;

@@ -1,4 +1,5 @@
 import processing.core.*;
+//import processing.library.SoundFile.*;
 import java.util.*;
 
 public class FinalProject extends PApplet {
@@ -6,6 +7,8 @@ public class FinalProject extends PApplet {
   //String gameState;
 
   PImage home, button1;
+
+  //SoundFile music;
 
   PImage win;
 
@@ -54,6 +57,7 @@ public class FinalProject extends PApplet {
     button1 = loadImage("BlockButton.png");
     button1.resize(width/2,height/10);
     textFont(font);
+    //music = new SoundFile(this, "Powerful-Trap-.mp3");
     scenes = new ArrayList<Scene>();
     scenes.add(new HomeScreen(this, home));
     scenes.add(new LevelSelector(this, one, two, three));
@@ -62,6 +66,7 @@ public class FinalProject extends PApplet {
     scenes.add(new EndScreen(this,end));
     scenes.add(new GameScreen2(this, game2));
     scenes.add(new GameScreen3(this, game3));
+    scenes.add(new Instructions(this));
   }
 
   public void draw()
@@ -100,7 +105,7 @@ public class FinalProject extends PApplet {
 
     if (keyCode == ENTER)  {
       if (current == 0){
-        current++;
+        current += 7;
       }
   }
     if(keyCode == ' '){
@@ -108,8 +113,24 @@ public class FinalProject extends PApplet {
         current = 0;
       }
     }
+    if(current == 7){
+      if(key == ' ') {
+        current -= 6;
+      }
+    }
     if(current == 4){
       if(keyCode == 'z' || keyCode == 'Z'){
+        GameScreen gameScene = (GameScreen)scenes.get(2);
+        gameScene.reDo();
+        GameScreen2 gameScene2 = (GameScreen2)scenes.get(5);
+        gameScene2.reDo();
+        GameScreen3 gameScene3 = (GameScreen3)scenes.get(6);
+        gameScene3.reDo();
+        current = 0;
+      }
+    }
+    if(current == 3){
+      if(key == ' '){
         GameScreen gameScene = (GameScreen)scenes.get(2);
         gameScene.reDo();
         GameScreen2 gameScene2 = (GameScreen2)scenes.get(5);
